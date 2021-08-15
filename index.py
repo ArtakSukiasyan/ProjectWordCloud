@@ -9,7 +9,6 @@ import sys
 #--------------------------------------
 file_contents=open('text.txt', 'r').read()
 #print(file_contents)
-
 #--------------------------------------
 
 
@@ -23,14 +22,26 @@ def calculate_frequencies(file_contents):
     "have", "has", "had", "do", "does", "did", "but", "at", "by", "with", "from", "here", "when", "where", "how", \
     "all", "any", "both", "each", "few", "more", "some", "such", "no", "nor", "too", "very", "can", "will", "just"]
     
+    #-------------------------------------
     # LEARNER CODE START HERE
-   
-    
+
+    file_without_punctuation=""
+    for l in file_contents:
+        if l.isalpha()==True or l.isspace():
+            file_without_punctuation+=l
+    print(file_contents)
+    print(file_without_punctuation)
+
+    #---------------------------------------
     #wordcloud
-    cloud = wordcloud.WordCloud()
-    cloud.generate_from_frequencies(frequencies)
-    return cloud.to_array()
+
+    #cloud = wordcloud.WordCloud()
+    #cloud.generate_from_frequencies(frequencies)
+    #return cloud.to_array()
 #--------------------------------------
+calculate_frequencies(file_contents)
+
+
 # Display your wordcloud image
 
 #myimage = calculate_frequencies(file_contents)
