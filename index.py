@@ -32,7 +32,7 @@ def calculate_frequencies(file_contents):
     for w in file_without_punctuation:
         if w.lower() not in uninteresting_words and w.isalpha():
             file_without_uninteresting_words.append(w)
-    print(file_without_uninteresting_words)
+    
     
 
 
