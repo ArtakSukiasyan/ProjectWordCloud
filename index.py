@@ -16,12 +16,8 @@ file_contents=open('text.txt', 'r').read()
 def calculate_frequencies(file_contents):
     # Here is a list of punctuations and uninteresting words you can use to process your text
     punctuations = '''!()-[]{};:'"\,<>./?@#$%^&*_~'''
-    uninteresting_words = ["the", "a","in", "to", "if", "is", "it", "of", "and", "or", "an", "as", "i", "me", "my", \
-    "we", "our", "ours", "you", "your", "yours", "he", "she", "him", "his", "her", "hers", "its", "they", "them", \
-    "their", "what", "which", "who", "whom", "this", "that", "am", "are", "was", "were", "be", "been", "being", \
-    "have", "has", "had", "do", "does", "did", "but", "at", "by", "with", "from", "here", "when", "where", "how", \
-    "all", "any", "both", "each", "few", "more", "some", "such", "no", "nor", "too", "very", "can", "will", "just"]
-    
+    uninteresting_words = ["the", "a","in", "on", "to", "if", "is", "it", "of", "and", "or", "an", "as", "i", "me", "my", "we", "our", "ours", "you", "your", "yours", "he", "she", "him", "his", "her", "hers", "its", "they", "them", "their", "what", "which", "who", "whom", "this", "that", "am", "are", "was", "were", "be", "been", "being",  "have", "has", "had", "do", "does", "did", "but", "at", "by", "with", "from", "here", "when", "where", "how",  "all", "any", "both", "each", "few", "more", "some", "such", "no", "nor", "too", "very", "can", "will", "just"]
+
     #-------------------------------------
     # LEARNER CODE START HERE
 
@@ -29,8 +25,17 @@ def calculate_frequencies(file_contents):
     for l in file_contents:
         if l.isalpha()==True or l.isspace():
             file_without_punctuation+=l
-    print(file_contents)
-    print(file_without_punctuation)
+    
+    file_without_punctuation=file_without_punctuation.split(" ")
+    
+    file_without_uninteresting_words=[]
+    for w in file_without_punctuation:
+        if w.lower() not in uninteresting_words and w.isalpha():
+            file_without_uninteresting_words.append(w)
+    print(file_without_uninteresting_words)
+    
+
+
 
     #---------------------------------------
     #wordcloud
