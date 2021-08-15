@@ -34,6 +34,13 @@ def calculate_frequencies(file_contents):
             file_without_uninteresting_words.append(w)
     
     
+    frequencies={}
+    for w in  file_without_uninteresting_words:
+        if w not in frequencies:
+            frequencies[w]=1
+        else:
+            frequencies[w]+=1
+    
 
 
 
